@@ -2,27 +2,27 @@ package com.showstopper.booking.controller;
 //import com.showstopper.booking.model.Booking;
 import com.showstopper.booking.model.Booking;
 import com.showstopper.booking.model.BookingData;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("bookings")
 public class BookingController {
+    private BookingData allBookings;
+    public  BookingController(){
+        this.allBookings = new BookingData();
+    }
     @GetMapping("/")
     public ResponseEntity<ArrayList<Booking>> getAllBookings() {
-        BookingData  allBookings = new BookingData();
         return ResponseEntity.ok(allBookings.getALLBookings());
 
     }
-
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Booking> getBookingById(@PathVariable int id){
-        BookingData allBookings = new BookingData();
         Optional<Booking> bookingById = allBookings.getBookingById(id);
 
         if (bookingById.isPresent()) {
@@ -31,6 +31,23 @@ public class BookingController {
             return ResponseEntity.notFound().build();
         }
     }
+    @PostMapping("/create")
+    public ResponseEntity<Integer> createBooking(@RequestBody Booking booking){
+        int createdBooking = allBookings.saveBooking(booking);
 
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdBooking);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Booking> updateBooking(@PathVariable("id") int id, @RequestBody Booking booking) throws Exception {
+
+
+        Booking updatedBooking = allBookings.updateBooking(id, booking);
+        if (updatedBooking != null) {
+            return ResponseEntity.ok(updatedBooking);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }
