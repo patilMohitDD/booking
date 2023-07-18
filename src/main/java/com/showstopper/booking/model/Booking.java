@@ -14,5 +14,4 @@ public class Booking {
     private String movieName;
     private String startTime;
     private String endTime;
-
 }

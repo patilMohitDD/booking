@@ -1,6 +1,7 @@
 package com.showstopper.booking.model;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class BookingData {
     private ArrayList<Booking> bookings = new ArrayList<>();
+    private ArrayList<Integer> bookingsId = new ArrayList<>();
     public BookingData(){
 
 //        Booking firstBooking = new Booking(10, "AB-10", "MI:6", " 3pm", "6pm");
@@ -34,11 +36,20 @@ public class BookingData {
                 .findFirst();
         return requiredBooking;
         }
+    public int generateID(){
+        Random random = new Random();
+        int generatedId = random.nextInt(100);
+
+        while (!bookingsId.isEmpty() & !this.bookingsId.contains(generatedId)) {
+            generatedId = random.nextInt(100);
+        }
+        return generatedId;
+    }
 
     public  int saveBooking(Booking newBooking){
-        newBooking.setId(1);
+//        newBooking.setId(1);
+        newBooking.setId(this.generateID());
         this.bookings.add(newBooking);
-
         return newBooking.getId();
     }
 
@@ -53,9 +64,7 @@ public class BookingData {
 
             return existingBooking;
         }
-
         throw new Exception("ID not Found");
-
     }
 
     public Boolean deleteBookingByID(int id){
@@ -69,5 +78,6 @@ public class BookingData {
         }
         return Boolean.FALSE;
     }
+
 }
 

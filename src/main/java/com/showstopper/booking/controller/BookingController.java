@@ -19,17 +19,15 @@ public class BookingController {
     @GetMapping("/")
     public ResponseEntity<ArrayList<Booking>> getAllBookings() {
         return ResponseEntity.ok(allBookings.getALLBookings());
-
     }
     @GetMapping("/{id}")
     public ResponseEntity<Booking> getBookingById(@PathVariable int id){
         Optional<Booking> bookingById = allBookings.getBookingById(id);
-
         if (bookingById.isPresent()) {
             return ResponseEntity.ok(bookingById.get());
-        } else {
-            return ResponseEntity.notFound().build();
         }
+        return ResponseEntity.notFound().build();
+
     }
     @PostMapping("/create")
     public ResponseEntity<Integer> createBooking(@RequestBody Booking booking){
@@ -46,16 +44,12 @@ public class BookingController {
         return ResponseEntity.notFound().build();
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteBookingByID(@PathVariable int id){
         boolean deletedBooking =  allBookings.deleteBookingByID(id);
-
         if(deletedBooking){
             return ResponseEntity.noContent().build();
         }
-
         return ResponseEntity.notFound().build();
     }
-
 }
