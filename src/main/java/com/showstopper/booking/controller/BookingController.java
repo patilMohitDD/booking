@@ -34,20 +34,28 @@ public class BookingController {
     @PostMapping("/create")
     public ResponseEntity<Integer> createBooking(@RequestBody Booking booking){
         int createdBooking = allBookings.saveBooking(booking);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(createdBooking);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Booking> updateBooking(@PathVariable("id") int id, @RequestBody Booking booking) throws Exception {
-
-
         Booking updatedBooking = allBookings.updateBooking(id, booking);
         if (updatedBooking != null) {
             return ResponseEntity.ok(updatedBooking);
-        } else {
-            return ResponseEntity.notFound().build();
         }
+        return ResponseEntity.notFound().build();
+    }
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteBookingByID(@PathVariable int id){
+        boolean deletedBooking =  allBookings.deleteBookingByID(id);
+
+        if(deletedBooking){
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.notFound().build();
     }
 
 }

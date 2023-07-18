@@ -25,7 +25,7 @@ public class BookingData {
     }
 
     public ArrayList<Booking>  getALLBookings(){
-        return bookings;
+        return this.bookings;
     }
 
     public Optional<Booking> getBookingById(int id) {
@@ -56,6 +56,18 @@ public class BookingData {
 
         throw new Exception("ID not Found");
 
+    }
+
+    public Boolean deleteBookingByID(int id){
+        Optional <Booking> requiredBooking = this.bookings.stream()
+                .filter(booking-> booking.getId()  == id)
+                .findFirst();
+
+        if (requiredBooking.isPresent()){
+            this.bookings.remove(requiredBooking);
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
     }
 }
 
