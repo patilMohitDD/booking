@@ -1,19 +1,16 @@
-package com.showstopper.booking.model;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
+package com.showstopper.booking.Service;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import com.showstopper.booking.model.Booking;
+
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 
-public class BookingData {
+public class BookingService {
     private ArrayList<Booking> bookings = new ArrayList<>();
     private ArrayList<Integer> bookingsId = new ArrayList<>();
-    public BookingData(){
+    public BookingService(){
 
 //        Booking firstBooking = new Booking(10, "AB-10", "MI:6", " 3pm", "6pm");
 //        Booking secondBooking = new Booking(12, "AB-11", "MI:7", " 9am", "12pm");

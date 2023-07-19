@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-@AllArgsConstructor // Create a Constructor of Booking class which we not created explicility which will take all the values of the private variable.
+@AllArgsConstructor
 public class Booking {
     private int id;
     private String customerBookingID;

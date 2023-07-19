@@ -1,7 +1,6 @@
 package com.showstopper.booking.controller;
-//import com.showstopper.booking.model.Booking;
 import com.showstopper.booking.model.Booking;
-import com.showstopper.booking.model.BookingData;
+import com.showstopper.booking.Service.BookingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +11,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("bookings")
 public class BookingController {
-    private BookingData allBookings;
+    private BookingService allBookings;
     public  BookingController(){
-        this.allBookings = new BookingData();
+        this.allBookings = new BookingService();
     }
     @GetMapping("/")
     public ResponseEntity<ArrayList<Booking>> getAllBookings() {
