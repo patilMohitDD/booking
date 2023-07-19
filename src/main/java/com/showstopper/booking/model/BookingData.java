@@ -1,6 +1,8 @@
 package com.showstopper.booking.model;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -47,11 +49,11 @@ public class BookingData {
     }
 
     public  int saveBooking(Booking newBooking){
-//        newBooking.setId(1);
         newBooking.setId(this.generateID());
         this.bookings.add(newBooking);
         return newBooking.getId();
     }
+
 
     public Booking updateBooking(int id, Booking updateBooking) throws Exception {
         Optional <Booking> requiredBooking = this.bookings.stream()
