@@ -1,12 +1,12 @@
 package com.showstopper.booking.Service;
-
 import com.showstopper.booking.model.Booking;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Optional;
 
-
+@Service
 public class BookingService {
     private ArrayList<Booking> bookings = new ArrayList<>();
     private ArrayList<Integer> bookingsId = new ArrayList<>();

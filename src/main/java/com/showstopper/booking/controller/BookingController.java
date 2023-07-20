@@ -3,11 +3,12 @@ import com.showstopper.booking.model.Booking;
 import com.showstopper.booking.Service.BookingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.Optional;
 
+@Controller
 @RestController
 @RequestMapping("bookings")
 public class BookingController {
@@ -26,7 +27,6 @@ public class BookingController {
             return ResponseEntity.ok(bookingById.get());
         }
         return ResponseEntity.notFound().build();
-
     }
     @PostMapping("/create")
     public ResponseEntity<Integer> createBooking(@RequestBody Booking booking){
