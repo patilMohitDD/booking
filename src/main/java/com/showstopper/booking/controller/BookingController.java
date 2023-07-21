@@ -1,6 +1,7 @@
 package com.showstopper.booking.controller;
 import com.showstopper.booking.model.Booking;
 import com.showstopper.booking.Service.BookingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -8,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
-@Controller
+
 @RestController
 @RequestMapping("bookings")
 public class BookingController {
+
+    @Autowired
     private BookingService allBookings;
-    public  BookingController(){
-        this.allBookings = new BookingService();
-    }
+
     @GetMapping("/")
     public ResponseEntity<ArrayList<Booking>> getAllBookings() {
         return ResponseEntity.ok(allBookings.getALLBookings());
@@ -23,9 +24,11 @@ public class BookingController {
     @GetMapping("/{id}")
     public ResponseEntity<Booking> getBookingById(@PathVariable int id){
         Optional<Booking> bookingById = allBookings.getBookingById(id);
+
         if (bookingById.isPresent()) {
             return ResponseEntity.ok(bookingById.get());
         }
+
         return ResponseEntity.notFound().build();
     }
     @PostMapping("/create")

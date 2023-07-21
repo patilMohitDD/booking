@@ -1,10 +1,7 @@
 package com.showstopper.booking.controller;
-import com.jayway.jsonpath.JsonPath;
 import com.showstopper.booking.Service.BookingService;
-
 import com.showstopper.booking.model.Booking;
-import net.bytebuddy.dynamic.DynamicType;
-import org.apache.coyote.Response;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -12,7 +9,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Optional;
 
@@ -39,7 +35,7 @@ public class BookingControllerTest {
     }
     @Test
     public void testGetBookingIdFound() throws Exception {
-        Integer testingId = 1;
+        Integer testingId = 2;
         String customerBookingID = "Ab:20";
 
         Optional<Booking> testBooking = Optional.of(Booking.builder().id(testingId).customerBookingID(customerBookingID).build());
@@ -52,4 +48,6 @@ public class BookingControllerTest {
                 .andExpect(jsonPath("$.customerBookingID").value(customerBookingID));
 
     }
+
+
 }
