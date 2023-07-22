@@ -40,9 +40,11 @@ public class BookingController {
     @PutMapping("/{id}")
     public ResponseEntity<Booking> updateBooking(@PathVariable("id") int id, @RequestBody Booking booking) throws Exception {
         Booking updatedBooking = allBookings.updateBooking(id, booking);
+
         if (updatedBooking != null) {
             return ResponseEntity.ok(updatedBooking);
         }
+
         return ResponseEntity.notFound().build();
     }
 

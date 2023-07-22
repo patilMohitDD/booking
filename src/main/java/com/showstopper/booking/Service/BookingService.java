@@ -18,7 +18,8 @@ public class BookingService {
                 .filter(booking-> booking.getId()  == id)
                 .findFirst();
         return requiredBooking;
-        }
+    }
+
     public int generateID(){
         Random random = new Random();
         int generatedId = random.nextInt(100);
@@ -30,7 +31,6 @@ public class BookingService {
         this.bookings.add(newBooking);
         return newBooking.getId();
     }
-
 
     public Booking updateBooking(int id, Booking updateBooking) throws Exception {
         Optional <Booking> requiredBooking = this.bookings.stream()
@@ -57,6 +57,5 @@ public class BookingService {
         }
         return Boolean.FALSE;
     }
-
 }
 
