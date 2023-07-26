@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -10,14 +11,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class Booking {
+
     private int id;
-    private String customerBookingID;
-    private String movieName;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm")
-    private LocalDateTime startTime;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm")
-    private LocalDateTime endTime;
-
-
-
+    private Show show;
+    private List<Seat> seats;
 }
+

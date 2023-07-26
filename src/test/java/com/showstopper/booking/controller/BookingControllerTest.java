@@ -1,6 +1,6 @@
 package com.showstopper.booking.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.showstopper.booking.Service.BookingService;
+import com.showstopper.booking.service.BookingService;
 import com.showstopper.booking.model.Booking;
 
 
@@ -68,9 +68,10 @@ public class BookingControllerTest {
         LocalDateTime testEndTime = LocalDateTime.parse(endTime, formatter);
 
         Booking testBooking = Booking.builder().
-                customerBookingID(customerBookingID).build();
-//                movieName(movieName).startTime(testStartTime).
-//                endTime(testEndTime).
+                customerBookingID(customerBookingID).
+                movieName(movieName).build();
+//                .startTime(testStartTime).
+//               endTime(testEndTime).
 //                build();
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -83,4 +84,21 @@ public class BookingControllerTest {
                 .content(testJsonBooking))
                 .andExpect(status().isCreated());
     }
+
+//    @Test
+//    public void testupdateBookingIdPresent() throws Exception{
+//        Integer testingId = 2;
+//        String customerBookingID = "Ab:21";
+//        Booking testBooking = Booking.builder().customerBookingID(customerBookingID).build();
+//
+//        when(this.bookingService.updateBooking(testingId, testBooking)).thenReturn(testBooking);
+//
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        String testJsonBooking = objectMapper.writeValueAsString(testBooking);
+//
+//        this.mockMvc.perform(put("/bookings/" + testingId)
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .body(testJsonBooking))
+//                .andExpect(status().isOk());
+//    }
 }

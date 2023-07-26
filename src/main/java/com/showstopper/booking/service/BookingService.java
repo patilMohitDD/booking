@@ -1,4 +1,4 @@
-package com.showstopper.booking.Service;
+package com.showstopper.booking.service;
 import com.showstopper.booking.model.Booking;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +39,6 @@ public class BookingService {
 
         if ( requiredBooking.isPresent() ){
             Booking existingBooking  = requiredBooking.get();
-            existingBooking.setCustomerBookingID( updateBooking.getCustomerBookingID() );
 
             return existingBooking;
         }

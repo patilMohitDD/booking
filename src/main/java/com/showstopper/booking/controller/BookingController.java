@@ -1,10 +1,9 @@
 package com.showstopper.booking.controller;
 import com.showstopper.booking.model.Booking;
-import com.showstopper.booking.Service.BookingService;
+import com.showstopper.booking.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
