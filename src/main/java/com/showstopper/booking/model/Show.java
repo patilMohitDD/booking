@@ -1,7 +1,5 @@
 package com.showstopper.booking.model;
 
-import jakarta.persistence.ForeignKey;
-
 public class Show {
     private int id;
     private String showTime;
