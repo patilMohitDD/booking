@@ -8,14 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
-
 @RestController
 @RequestMapping("bookings")
 public class BookingController {
 
     @Autowired
     private BookingService allBookings;
-
     @GetMapping("/")
     public ResponseEntity<ArrayList<Booking>> getAllBookings() {
         return ResponseEntity.ok(allBookings.getALLBookings());
@@ -27,7 +25,6 @@ public class BookingController {
         if (bookingById.isPresent()) {
             return ResponseEntity.ok(bookingById.get());
         }
-
         return ResponseEntity.notFound().build();
     }
     @PostMapping("/create")
@@ -43,10 +40,8 @@ public class BookingController {
         if (updatedBooking != null) {
             return ResponseEntity.ok(updatedBooking);
         }
-
         return ResponseEntity.notFound().build();
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteBookingByID(@PathVariable int id){
         boolean deletedBooking =  allBookings.deleteBookingByID(id);

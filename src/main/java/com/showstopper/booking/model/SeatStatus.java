@@ -1,5 +1,5 @@
 package com.showstopper.booking.model;
 
-public enum SeatBookingStatus {
+public enum SeatStatus {
     FREE, RESERVED
 };

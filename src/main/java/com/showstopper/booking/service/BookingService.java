@@ -19,7 +19,6 @@ public class BookingService {
                 .findFirst();
         return requiredBooking;
     }
-
     public int generateID(){
         Random random = new Random();
         int generatedId = random.nextInt(100);
