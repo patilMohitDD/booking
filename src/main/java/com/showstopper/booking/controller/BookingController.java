@@ -43,7 +43,7 @@ public class BookingController {
         return ResponseEntity.notFound().build();
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteBookingByID(@PathVariable int id){
+    public ResponseEntity<Booking> deleteBookingByID(@PathVariable int id){
         boolean deletedBooking =  allBookings.deleteBookingByID(id);
         if(deletedBooking){
             return ResponseEntity.noContent().build();

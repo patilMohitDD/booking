@@ -1,6 +1,5 @@
 package com.showstopper.booking.controller;
 
-import com.showstopper.booking.model.Booking;
 import com.showstopper.booking.model.Theatre;
 import com.showstopper.booking.service.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;

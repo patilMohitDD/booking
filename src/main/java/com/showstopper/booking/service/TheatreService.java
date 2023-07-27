@@ -42,7 +42,7 @@ public class TheatreService {
             Theatre existingTheatreInfo = requiredTheatreInfo.get();
 
             Set<ConstraintViolation<Theatre>> violations = this.customValidator.validate(theatre);
-            if (violations.size() > 0) {
+            if (!violations.isEmpty()) {
                 List<String> errors = violations.stream().map(ConstraintViolation::getMessage).collect(Collectors.toList());
                 throw new Exception (String.join("\n", errors));
             }
