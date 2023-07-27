@@ -30,7 +30,6 @@ public class BookingService {
         this.bookings.add(newBooking);
         return newBooking.getId();
     }
-
     public Booking updateBooking(int id, Booking updateBooking) throws Exception {
         Optional <Booking> requiredBooking = this.bookings.stream()
             .filter(booking-> booking.getId()  == id)

@@ -35,4 +35,14 @@ public class TheatreController {
         return ResponseEntity.notFound().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Theatre> updateTheatreInfo(@PathVariable("id") int id, @RequestBody Theatre theatre) throws Exception {
+        Theatre updatedTheatreInfo = theatreService.updateTheatreInfo(id, theatre);
+
+        if (updatedTheatreInfo != null) {
+            return ResponseEntity.ok(updatedTheatreInfo);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 }
