@@ -12,6 +12,5 @@ public class Booking {
     private Show show;
     private List<Seat> seats;
     private BookingStatus status;
-
 }
 

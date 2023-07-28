@@ -1,4 +1,5 @@
 package com.showstopper.booking.service;
+import com.showstopper.booking.exceptions.TheatreNotFoundException;
 import com.showstopper.booking.model.Theatre;
 import com.showstopper.booking.repository.TheatreRepository;
 import com.showstopper.booking.utils.CustomValidator;
@@ -33,7 +34,7 @@ public class TheatreService {
             return existingTheatreInfo;
         }
 
-        throw new Exception("ID not Found");
+        throw new TheatreNotFoundException("ID not Found");
     }
     public Theatre updateTheatreInfo(int id, Theatre theatre) throws Exception {
         Optional<Theatre> requiredTheatreInfo = theatreRepository.findById(id);

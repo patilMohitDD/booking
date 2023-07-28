@@ -1,5 +1,6 @@
 package com.showstopper.booking.controller;
 
+import com.showstopper.booking.exceptions.TheatreNotFoundException;
 import com.showstopper.booking.model.Theatre;
 import com.showstopper.booking.service.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +26,19 @@ public class TheatreController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTheatre);
     }
     @GetMapping("/info/{id}")
-    public ResponseEntity<Theatre> getTheatreInfo(@PathVariable int id) throws Exception {
-        Theatre getTheatreInfo = theatreService.getTheatreInfo(id);
-
-        if (getTheatreInfo != null) {
-            return ResponseEntity.ok(getTheatreInfo);
+    public ResponseEntity getTheatreInfo(@PathVariable int id){
+        try {
+            Theatre getTheatreInfo = theatreService.getTheatreInfo(id);
+            if (getTheatreInfo != null) {
+                return ResponseEntity.ok(getTheatreInfo);
+            }
         }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+
         return ResponseEntity.notFound().build();
+
     }
 
     @PutMapping("/{id}")
