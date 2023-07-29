@@ -15,9 +15,7 @@ public class TheatreController {
     private TheatreService theatreService;
 
     @GetMapping("/")
-    public ResponseEntity<List<Theatre>> getAllTheatre() {
-        return ResponseEntity.ok(theatreService.getAll());
-    }
+    public ResponseEntity<List<Theatre>> getAllTheatre() { return ResponseEntity.ok(theatreService.getAll()); }
 
     @PostMapping("/create")
     public ResponseEntity<Integer> createTheatre(@RequestBody Theatre theatre){

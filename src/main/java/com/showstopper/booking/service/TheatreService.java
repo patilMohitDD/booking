@@ -19,12 +19,14 @@ public class TheatreService {
     @Autowired
     private TheatreRepository theatreRepository;
     private CustomValidator customValidator = new CustomValidator();
+
+    public List<Theatre> getAll() {
+        return theatreRepository.findAll();
+    }
+
     public  int addTheatre(Theatre newTheatre) {
         Theatre theatre = theatreRepository.save(newTheatre);
         return theatre.getId();
-    }
-    public List<Theatre> getAll() {
-        return theatreRepository.findAll();
     }
     public Theatre getTheatreInfo(int id) throws Exception {
         Optional<Theatre> requiredTheatreInfo = theatreRepository.findById(id);
