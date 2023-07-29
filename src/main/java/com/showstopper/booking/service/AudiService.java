@@ -19,7 +19,7 @@ public class AudiService {
     @Autowired
     private AudiRepository audiRepository;
     private Audi audi;
-    private CustomValidator customValidator =  new CustomValidator();;
+    private CustomValidator customValidator =  new CustomValidator();
 
     public List<Audi> getALlInfo() {
         return audiRepository.findAll();

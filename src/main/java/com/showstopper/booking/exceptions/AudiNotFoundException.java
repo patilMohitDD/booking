@@ -1,7 +1,7 @@
 package com.showstopper.booking.exceptions;
 
 public class AudiNotFoundException extends Exception{
-    public AudiNotFoundException(String mssg){
-        super(mssg);
+    public AudiNotFoundException(String errorMessage){
+        super(errorMessage);
     }
 }
