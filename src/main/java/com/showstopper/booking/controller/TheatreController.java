@@ -1,6 +1,5 @@
 package com.showstopper.booking.controller;
 
-import com.showstopper.booking.exceptions.TheatreNotFoundException;
 import com.showstopper.booking.model.Theatre;
 import com.showstopper.booking.service.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +13,19 @@ import java.util.List;
 public class TheatreController {
     @Autowired
     private TheatreService theatreService;
+
     @GetMapping("/")
     public ResponseEntity<List<Theatre>> getAllTheatre() {
         return ResponseEntity.ok(theatreService.getAll());
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Integer> createThreatre(@RequestBody Theatre theatre){
+    public ResponseEntity<Integer> createTheatre(@RequestBody Theatre theatre){
         int createdTheatre = theatreService.addTheatre(theatre);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTheatre);
     }
+
     @GetMapping("/info/{id}")
     public ResponseEntity getTheatreInfo(@PathVariable int id){
         try {
@@ -36,9 +37,7 @@ public class TheatreController {
         catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
         return ResponseEntity.notFound().build();
-
     }
 
     @PutMapping("/{id}")
@@ -51,4 +50,13 @@ public class TheatreController {
         return ResponseEntity.notFound().build();
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Theatre> deleteTheatreInfo(@PathVariable int id){
+        Boolean deleteTheatre = theatreService.deleteTheatre(id);
+
+        if(deleteTheatre){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.badRequest().build();
+    }
 }

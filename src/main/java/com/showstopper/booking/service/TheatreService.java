@@ -57,4 +57,12 @@ public class TheatreService {
 
         throw new Exception("ID not Found");
     }
+
+    public Boolean deleteTheatre(int id) {
+        if (theatreRepository.findById(id).isPresent()){
+            theatreRepository.deleteById(id);
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
 }
