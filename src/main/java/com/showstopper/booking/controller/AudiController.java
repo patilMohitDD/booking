@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("audi")
@@ -24,16 +25,36 @@ public class AudiController {
         return  ResponseEntity.ok(createAudiID);
     }
 
-//    @PutMapping("/update/{id}")
-//    public  ResponseEntity<Audi> updateAudi(@PathVariable int id, @RequestBody Audi audi){
-//        Audi updatedAudi = audiService.updateAudi(id, audi);
-//
-//        if (updatedAudi != null){
-//            return ResponseEntity.ok(updatedAudi);
-//        }
-//
-//        return ResponseEntity.notFound().build();
-//    }
+    @GetMapping("/{id}")
+    public  ResponseEntity getAudiByID(@PathVariable int id){
+        try {
+            Audi requiredAudi = audiService.getAudiByID(id);
+            return ResponseEntity.ok(requiredAudi);
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 
+    @PutMapping("/update/{id}")
+    public  ResponseEntity updateAudi(@PathVariable int id, @RequestBody Audi audi){
+        try {
+            Audi updateAudi = audiService.updateAudi(id,audi);
+            return ResponseEntity.ok(updateAudi);
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity deleteAudi(@PathVariable int id) {
+
+        Boolean deleteAudi = audiService.deleteAudi(id);
+        if (deleteAudi) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.badRequest().body("Id Not Present");
+    }
 }
 
