@@ -52,6 +52,7 @@ public class TheatreService {
 
             existingTheatreInfo.setName(theatre.getName());
             existingTheatreInfo.setLocation(theatre.getLocation());
+            existingTheatreInfo.setAudi(theatre.getAudi());
             Theatre updatedTheatreInfo  = theatreRepository.save(existingTheatreInfo);
 
             return updatedTheatreInfo;

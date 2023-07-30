@@ -24,4 +24,6 @@ public class Theatre {
     @NotNull(message = "Location cannot be null")
     private String location;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Audi audi;
 }
