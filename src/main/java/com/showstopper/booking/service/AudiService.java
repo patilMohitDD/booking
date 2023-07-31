@@ -59,8 +59,8 @@ public class AudiService {
     }
 
     public Boolean deleteAudi(int id) {
-        Optional<Audi> requiredAudi = audiRepository.findById(id);
 
+        Optional<Audi> requiredAudi = audiRepository.findById(id);
         if(requiredAudi.isPresent()){
             audiRepository.deleteById(id);
             return Boolean.TRUE;

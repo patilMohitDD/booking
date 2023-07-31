@@ -1,10 +1,9 @@
 package com.showstopper.booking.repository;
 
-import com.showstopper.booking.model.Theatre;
+import com.showstopper.booking.model.Show;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TheatreRepository extends JpaRepository<Theatre, Integer> {
+public interface ShowRepository extends JpaRepository<Show, Integer> {
 }
-

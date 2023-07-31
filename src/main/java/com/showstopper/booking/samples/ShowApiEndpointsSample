@@ -1,0 +1,164 @@
+{
+    "showTime": "15th August 7:30 pm",
+    "theatre": {
+        "name": "Regal Cinemas",
+        "location": "New York",
+        "audi": {
+            "capacity": 800,
+            "seats": [
+                {
+                    "seatNumber": "A-01",
+                    "status": "FREE"
+                },
+                {
+                    "seatNumber": "A-02",
+                    "status": "FREE"
+                }
+            ]
+        }
+    },
+    "movie": {
+        "title": "Inception",
+        "duration": 2.45,
+        "genre": "Sci-Fi",
+        "rating": 8.8
+    }
+}
+#####
+
+{
+    "showTime": "25th December 6:00 pm",
+    "theatre": {
+        "name": "Garden City Theatres",
+        "location": "Los Angeles",
+        "audi": {
+            "capacity": 1500,
+            "seats": [
+                {
+                    "seatNumber": "G-01",
+                    "status": "FREE"
+                },
+                {
+                    "seatNumber": "G-02",
+                    "status": "RESERVED"
+                }
+            ]
+        }
+    },
+    "movie": {
+        "title": "The Avengers",
+        "duration": 2.22,
+        "genre": "Action",
+        "rating": 8.5
+    }
+}
+######
+
+{
+    "showTime": "5th November 8:15 pm",
+    "theatre": {
+        "name": "Sunrise Cinemas",
+        "location": "London",
+        "audi": {
+            "capacity": 1000,
+            "seats": [
+                {
+                    "seatNumber": "S-01",
+                    "status": "RESERVED"
+                },
+                {
+                    "seatNumber": "S-02",
+                    "status": "FREE"
+                }
+            ]
+        }
+    },
+    "movie": {
+        "title": "The Lion King",
+        "duration": 1.58,
+        "genre": "Animation",
+        "rating": 8.5
+    }
+}
+#####
+{
+    "showTime": "20th September 7:00 pm",
+    "theatre": {
+        "name": "MegaPlex",
+        "location": "Toronto",
+        "audi": {
+            "capacity": 1200,
+            "seats": [
+                {
+                    "seatNumber": "M-01",
+                    "status": "RESERVED"
+                },
+                {
+                    "seatNumber": "M-02",
+                    "status": "RESERVED"
+                }
+            ]
+        }
+    },
+    "movie": {
+        "title": "The Dark Knight",
+        "duration": 2.32,
+        "genre": "Action",
+        "rating": 9.0
+    }
+}
+####
+
+{
+    "showTime": "12th October 6:45 pm",
+    "theatre": {
+        "name": "Starlight Theatres",
+        "location": "Sydney",
+        "audi": {
+            "capacity": 800,
+            "seats": [
+                {
+                    "seatNumber": "ST-01",
+                    "status": "RESERVED"
+                },
+                {
+                    "seatNumber": "ST-02",
+                    "status": "RESERVED"
+                }
+            ]
+        }
+    },
+    "movie": {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "duration": 2.32,
+        "genre": "Fantasy",
+        "rating": 7.6
+    }
+}
+####
+{
+    "showTime": "1st November 8:00 pm",
+    "theatre": {
+        "name": "CineMagic",
+        "location": "Chicago",
+        "audi": {
+            "capacity": 1000,
+            "seats": [
+                {
+                    "seatNumber": "C-01",
+                    "status": "FREE"
+                },
+                {
+                    "seatNumber": "C-02",
+                    "status": "FREE"
+                }
+            ]
+        }
+    },
+    "movie": {
+        "title": "Jurassic Park",
+        "duration": 2.07,
+        "genre": "Adventure",
+        "rating": 8.1
+    }
+}
