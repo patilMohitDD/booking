@@ -2,7 +2,6 @@ package com.showstopper.booking.service;
 
 import com.showstopper.booking.exceptions.AudiNotFoundException;
 import com.showstopper.booking.model.Audi;
-import com.showstopper.booking.model.Theatre;
 import com.showstopper.booking.repository.AudiRepository;
 import com.showstopper.booking.utils.CustomValidator;
 import jakarta.validation.ConstraintViolation;
@@ -53,7 +52,6 @@ public class AudiService {
             updatingAudi.setCapacity(newAudi.getCapacity());
 
             Audi updatedAudi = audiRepository.save(updatingAudi);
-
             return updatedAudi;
         }
         throw new Exception("Audi is Not Present");
