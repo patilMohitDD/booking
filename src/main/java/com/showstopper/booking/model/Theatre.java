@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -27,5 +25,6 @@ public class Theatre {
     private String location;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @NotNull(message = "Auditorium cannot be Null")
     private Audi audi;
 }

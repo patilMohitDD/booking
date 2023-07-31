@@ -50,6 +50,7 @@ public class AudiService {
         if (requireAudi.isPresent()){
             Audi updatingAudi = requireAudi.get();
             updatingAudi.setCapacity(newAudi.getCapacity());
+            updatingAudi.setSeats(newAudi.getSeats());
 
             Audi updatedAudi = audiRepository.save(updatingAudi);
             return updatedAudi;

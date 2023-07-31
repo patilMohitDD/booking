@@ -1,0 +1,135 @@
+{
+    "name": "Patil Palace",
+    "location": "Mumbai",
+    "audi": {
+        "capacity": 200,
+        "seats": [
+            {
+                "seatNumber": "P-01",
+                "status": "FREE"
+            },
+            {
+                "seatNumber": "P-02",
+                "status": "RESERVED"
+            }
+        ]
+    }
+}
+
+########
+{
+    "name": "The Royal Theatre",
+    "location": "London",
+    "audi": {
+        "capacity": 300,
+        "seats": [
+            {
+                "seatNumber": "R-01",
+                "status": "FREE"
+            },
+            {
+                "seatNumber": "R-02",
+                "status": "RESERVED"
+            }
+        ]
+    }
+}
+
+######
+{
+          "name": "Starlight Cinema",
+          "location": "Los Angeles",
+          "audi": {
+              "capacity": 150,
+              "seats": [
+                  {
+                      "seatNumber": "S-01",
+                      "status": "RESERVED"
+                  },
+                  {
+                      "seatNumber": "S-02",
+                      "status": "FREE"
+                  }
+              ]
+          }
+      }
+########
+{
+    "name": "City Square Theatre",
+    "location": "New York",
+    "audi": {
+        "capacity": 250,
+        "seats": [
+            {
+                "seatNumber": "C-01",
+                "status": "FREE"
+            },
+            {
+                "seatNumber": "C-02",
+                "status": "RESERVED"
+            }
+        ]
+    }
+}
+
+########
+{
+    "name": "Silver Screen Cinema",
+    "location": "Paris",
+    "audi": {
+        "capacity": 180,
+        "seats": [
+            {
+                "seatNumber": "SS-01",
+                "status": "RESERVED"
+            },
+            {
+                "seatNumber": "SS-02",
+                "status": "FREE"
+            }
+        ]
+    }
+}
+#######
+{
+    "name": "The Grand Auditorium",
+    "location": "Sydney",
+    "audi": {
+        "capacity": 400,
+        "seats": [
+            {
+                "seatNumber": "GA-01",
+                "status": "FREE"
+            },
+            {
+                "seatNumber": "GA-02",
+                "status": "FREE"
+            }
+        ]
+    }
+}
+########
+{
+    "name": "CineMagic",
+    "location": "Tokyo",
+    "audi": {
+        "capacity": 100,
+        "seats": [
+            {
+                "seatNumber": "CM-01",
+                "status": "RESERVED"
+            },
+            {
+                "seatNumber": "CM-02",
+                "status": "FREE"
+            }
+        ]
+    }
+}
+
+######
+
+
+
+
+

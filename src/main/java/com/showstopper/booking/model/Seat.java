@@ -24,4 +24,5 @@ public class Seat {
     @Enumerated(EnumType.STRING)
     @NotNull(message = "Seat Status cannot be null")
     private SeatStatus status;
+
 }

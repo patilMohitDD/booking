@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,4 +21,8 @@ public class Audi {
     @Column(name = "capacity" , nullable = false)
     @NotNull(message = "Capacity cannot be 0")
     private int capacity;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @NotNull(message = "seats cannot be null")
+    private List<Seat> seats;
 }
